@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- importer le fichier de style -->
+        <title>ODC Portal - Erreur de Connexion</title>
+        <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+        <script>
+            setTimeout(function (){
+                document.getElementById("error").remove();
+            }, 4000);
+        </script>
+    </head>
+    <body>
+        <div id="container">
+        <!-- zone de connexion -->
+    
+            <form name="login_form" action="$PORTAL_ACTION$" method="POST">
+                <!-- <h1>Connexion</h1> -->
+                <div class="logo" style="width: 100%;">
+                    <img src="orange_fab_madagascar_cover.jpg" alt="ODC_Logo" style="width: inherit;">
+                </div>
+                
+                <div class="inputDiv" style="margin-top: 25px;">
+                    <!-- <label><b>Nom d'utilisateur</b></label> -->
+                    <input type="text" placeholder="Nom d'utilisateur" name="auth_user" required>
+                </div>
+
+                <div class="inputDiv">
+                    <!-- <label><b>Mot de passe</b></label> -->
+                    <input type="password" placeholder="Mot de passe" name="auth_pass" required>
+                </div>
+
+                <div style="margin-top: 25px;">
+                    <input type="hidden" name="redirurl" value='$PORTAL_REDIRURL$'>
+                    <input type="submit" value="Login" id="login" name="accept">
+                </div>
+                <p class="error" id="error">Erreur de connexion</p>
+            </form>
+        </div>
+    </body>
+</html>
